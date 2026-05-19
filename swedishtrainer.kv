@@ -1,0 +1,83 @@
+<TrainerRoot>:
+    orientation: "vertical"
+    padding: 20
+    spacing: 12
+
+    Label:
+        text: root.tts_status
+        font_size: 18
+        color: 0.5, 0.5, 0.5, 1
+        size_hint_y: None
+        height: 28
+
+    Label:
+        text: "← prev  |  ↑ Swedish  |  ↓ English  |  next →"
+        font_size: 18
+        color: 0.45, 0.65, 0.9, 1
+        size_hint_y: None
+        height: 28
+
+    Label:
+        text: root.question
+        font_size: 38
+        bold: True
+        text_size: self.width, None
+        halign: "center"
+
+    Label:
+        text: root.tense
+        font_size: 30
+        text_size: self.width, None
+        halign: "center"
+
+    TextInput:
+        id: answer
+        hint_text: "Type Swedish answer"
+        multiline: False
+        font_size: 32
+        size_hint_y: None
+        height: 72
+
+    Button:
+        text: "Check"
+        size_hint_y: None
+        height: 72
+        font_size: 28
+        on_release: root.check_answer(answer.text)
+
+    Button:
+        text: "Pronounce again"
+        size_hint_y: None
+        height: 72
+        font_size: 28
+        on_release: root.pronounce_current()
+
+    Button:
+        text: "Show answer"
+        size_hint_y: None
+        height: 72
+        font_size: 28
+        on_release: root.reveal_answer()
+
+    Label:
+        text: root.answer_hint
+        font_size: 34
+        bold: True
+        color: 0.2, 0.8, 0.4, 1
+        text_size: self.width, None
+        halign: "center"
+
+    Label:
+        text: root.feedback
+        font_size: 28
+        text_size: self.width, None
+        halign: "center"
+
+    Button:
+        text: "Next →"
+        size_hint_y: None
+        height: 72
+        font_size: 28
+        on_release:
+            answer.text = ""
+            root.next_question()

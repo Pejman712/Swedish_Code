@@ -15,7 +15,7 @@ from playsound import playsound
 # SETTINGS
 # -----------------------------
 
-PDF_PATH = "./swedish_verbs_table_v3.pdf"
+PDF_PATH = "./data/swedish_verbs_table_v3.pdf"
 
 SWEDISH_VOICE = "sv-SE-SofieNeural"
 AUDIO_FILE = "swedish_word.mp3"
